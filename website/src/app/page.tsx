@@ -1,9 +1,17 @@
 'use client'
 
+import React from 'react';
+import Navbar from './components/navbar/navbar';
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-
+    <main>
+      <Navbar />
+      <div className="container">
+        <h1>Home</h1>
+        <p>Welcome to the home page</p>
+      </div>
     </main>
+
   );
 }
