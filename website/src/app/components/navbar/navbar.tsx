@@ -1,17 +1,32 @@
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 
-export default function Navbar() {
+interface NavbarProps {
+    className?: string;
+}
+
+
+const Navbar: React.FC<NavbarProps> = ({ className }) => {
+    const currentPath = usePathname();
+
     return (
-        <header className="flex  w-full h-20 top-0 sticky bg-white"> 
-            <nav className="flex items-center grow">
-                <ul className="flex grow px-7">
-                    {/* <li className="p-2"><a href="">Home</a></li> */}
-                    <li className="py-2 px-5"><a href="">Merch</a></li>
-                    <li className="py-2 px-5"><a href="">About</a></li>
-                </ul>
+        <header className={className}> 
+            <nav className="flex items-center grow justify-evenly">
+                {currentPath !== "/" &&(
+                    <Link href="/">Home</Link>
+                )}
+                <Link href="/Merch">Merch</Link>
+                <Link href="/About">About</Link>
             </nav>
-            <div className="flex items-centerjustify-evenly">
-                
+            <div className="flex items-center grow justify-evenly">
+                <div className="flex items-center">
+                    <Link href="/Contact">
+                        Contact
+                    </Link>
+                </div>
             </div>
         </header>
     );
 }
+
+export default Navbar;
