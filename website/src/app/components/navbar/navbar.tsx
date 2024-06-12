@@ -11,14 +11,14 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
 
     return (
         <header className={className}> 
-            <nav className="flex items-center grow justify-evenly">
+            <nav className="flex items-center grow justify-start">
                 {currentPath !== "/" &&(
-                    <Link href="/">Home</Link>
+                    <Link href="/" className="mx-10">Home</Link>
                 )}
-                <Link href="/Merch">Merch</Link>
-                <Link href="/About">About</Link>
+                <Link href="/Merch" className="mx-10">Merch</Link>
+                <Link href="/About" className="mx-10">About</Link>
             </nav>
-            <div className="flex items-center grow justify-evenly">
+            <div className="flex items-center grow justify-end mx-10">
                 <div className="flex items-center">
                     <Link href="/Contact">
                         Contact
